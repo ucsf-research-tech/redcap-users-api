@@ -1,0 +1,685 @@
+{
+	"info": {
+		"_postman_id": "ec010e7e-9573-4a1d-9119-2c14bfc72c77",
+		"name": "Users API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userdetail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"userdetail\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setsuspension",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setsuspension\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removesuspension",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"removesuspension\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suspend",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"suspend\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeexpiration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"removeexpiration\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "expire",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"expire\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deactivate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"expire\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"activate\",\n    \"username\": \"{{user}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setsponsor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setsponsor\",\n    \"username\": \"{{user}}\",\n    \"sponsor\": \"Test Sponsor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setinstitution",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setinstitution\",\n    \"username\": \"{{user}}\",\n    \"institution\": \"Test Institution\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setexpiration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setexpiration\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setcomments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addcomments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"addcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "module"
+						},
+						{
+							"key": "prefix",
+							"value": "users_api"
+						},
+						{
+							"key": "page",
+							"value": "service"
+						},
+						{
+							"key": "NOAUTH",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

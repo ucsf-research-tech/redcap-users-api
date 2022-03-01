@@ -1,0 +1,37 @@
+{
+   "name": "Users API",
+   "namespace": "UCSF\\Users",
+   "description": "users api",
+   "authors": [
+       {
+            "name": "Kaizen Towfiq",
+            "email": "kaizen.towfiq@ucsf.edu",
+            "institution": "UCSF"
+        }
+    ],
+    "system-settings": [
+        {
+            "key": "users-api-token",
+            "name": "token for the users api",
+            "type": "text",
+            "required": true
+        },
+        {
+            "key": "ip_whitelist",
+            "name": "IP Whitelist",
+            "type": "sub_settings",
+            "repeatable": true,
+            "sub_settings": [
+                {
+                    "key": "ip",
+                    "name": "IP address or CIDR notation (e.g. 192.168.123.1/24). Create a new subsetting for each IP address.",
+                    "required": false,
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "no-auth-pages": [
+        "service"
+        ]
+}
