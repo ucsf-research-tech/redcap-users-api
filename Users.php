@@ -3,6 +3,7 @@ namespace UCSF\Users;
 
 use REDCap;
 use UserRights;
+use Exception;
 use ExternalModules\AbstractExternalModule;
 
 
@@ -15,10 +16,10 @@ class Users extends AbstractExternalModule
     public $token, $request, $username;
 
     // Common Response Messages
-    private $cannot_modify_data_error_message;
-    private $success_message = 'Success';
-    private $missing_username_message = 'Missing username';
-    private $invalid_time_format_message = 'Time invalid format.  Needs to be YYYY-MM-DD hh:mm:ss';
+    public $cannot_modify_data_error_message;
+    public $success_message = 'Success';
+    public $missing_username_message = 'Missing username';
+    public $invalid_time_format_message = 'Time invalid format.  Needs to be YYYY-MM-DD hh:mm:ss';
 
     /**
      * This function wraps the handling of all API requests
@@ -27,9 +28,6 @@ class Users extends AbstractExternalModule
      */
     public function parseRequest()
     {
-        // LOG START TIME
-        $this->ts_start = microtime(true);
-
         // CONVERT RAW POST TO PHP POST
         if (empty($_POST)) $_POST = json_decode(file_get_contents('php://input'), true);
         
@@ -47,7 +45,9 @@ class Users extends AbstractExternalModule
 
         // VERIFY TOKEN
         $this->api_token = $this->getSystemSetting('users-api-token');
-        if (empty($this->token) || $this->token != $this->api_token) $this->returnError("Invalid API Token");
+        if (empty($this->token) || $this->token != $this->api_token) {
+            return $this->returnError("Invalid API Token");
+        }
 
         $this->cannot_modify_data_error_message = "Cannot modify data for user: " . $this->username;
 
@@ -63,17 +63,21 @@ class Users extends AbstractExternalModule
      */
     public function performRequest() {
         $result = array();
-        if (empty($this->username)) $this->returnError($this->missing_username_message);
+        if (empty($this->username)) {
+            return $this->returnError($this->missing_username_message);
+        }
         switch($this->request) {
             case "userdetail";
                 $result = $this->getUserDetailByUsername($this->username);
                 break;
             case "setsuspension";
-                if (empty($this->time)) $this->returnError("Missing time");
+                if (empty($this->time)) {
+                    return $this->returnError("Missing time");
+                }
                 if (preg_match('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/',$this->time)) {
                     $result = $this->setUserSuspensionTime($this->username, $this->time);
                 } else {
-                    $this->returnError($this->invalid_time_format_message);
+                    return $this->returnError($this->invalid_time_format_message);
                 }
                 break;
             case "removesuspension";
@@ -83,11 +87,13 @@ class Users extends AbstractExternalModule
                 $result = $this->suspendUser($this->username);
                 break;
             case "setexpiration";
-                if (empty($this->time)) $this->returnError("Missing time");
+                if (empty($this->time)) {
+                    return $this->returnError("Missing time");
+                }
                 if (preg_match('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/',$this->time)) {
                     $result = $this->setUserExpirationTime($this->username, $this->time);
                 } else {
-                  $this->returnError($this->invalid_time_format_message);
+                  return $this->returnError($this->invalid_time_format_message);
                 }
                 break;
             case "removeexpiration";
@@ -103,27 +109,43 @@ class Users extends AbstractExternalModule
                 $result = $this->activate($this->username);
                 break;
             case "setinstitution";
-                if (empty($this->institution)) $this->returnError("Missing institution");
-                if (strlen($this->institution)>255) $this->returnError("Institution is too long.  Needs to be less than 256 characters.");
+                if (empty($this->institution)) {
+                    return $this->returnError("Missing institution");
+                }
+                if (strlen($this->institution)>255) {
+                    return $this->returnError("Institution is too long.  Needs to be less than 256 characters.");
+                }
                 $result = $this->setInstitution($this->username, $this->institution);
                 break;
             case "setsponsor";
-                if (empty($this->sponsor)) $this->returnError("Missing sponsor");
-                if (strlen($this->sponsor)>255) $this->returnError("Sponsor is too long.  Needs to be less than 256 characters.");
+                if (empty($this->sponsor)) {
+                    return $this->returnError("Missing sponsor");
+                }
+                if (strlen($this->sponsor)>255) {
+                    return $this->returnError("Sponsor is too long.  Needs to be less than 256 characters.");
+                }
                 $result = $this->setSponsor($this->username, $this->sponsor);
                 break;
             case "setcomments";
-                if (empty($this->comments)) $this->returnError("Missing comments");
-                if (strlen($this->comments)>65535) $this->returnError("Comments is too long.  Needs to be less than 65535 characters.");
+                if (empty($this->comments)) {
+                    return $this->returnError("Missing comments");
+                }
+                if (strlen($this->comments)>65535) {
+                    return $this->returnError("Comments is too long.  Needs to be less than 65535 characters.");
+                }
                 $result = $this->setComments($this->username, $this->comments);
                 break;
             case "addcomments";
-                if (empty($this->comments)) $this->returnError("Missing comments");
-                if (strlen($this->comments)>65535) $this->returnError("Comments is too long.  Needs to be less than 65535 characters.");
+                if (empty($this->comments)) {
+                    return $this->returnError("Missing comments");
+                }
+                if (strlen($this->comments)>65535) {
+                    return $this->returnError("Comments is too long.  Needs to be less than 65535 characters.");
+                }
                 $result = $this->addComments($this->username, $this->comments);
                 break;
             default:
-                $this->returnError("Invalid Request", 400);
+                return $this->returnError("Invalid Request", 400);
                 break;
         }
 
@@ -165,7 +187,7 @@ class Users extends AbstractExternalModule
                 }
 
                 // Return error
-                $this->returnError("Invalid source IP: " . $ip_addr);
+                return $this->returnError("Invalid source IP: " . $ip_addr);
             }
         }
     }
@@ -190,7 +212,7 @@ class Users extends AbstractExternalModule
     }
 
     /**
-     * Return an error message and exit
+     * Return an error message
      *
      * @param string    $error_message
      * @param int       $http_code
@@ -199,7 +221,7 @@ class Users extends AbstractExternalModule
         header("Content-type: application/json");
         http_response_code($http_code);
         echo json_encode(["error" => $error_message]);
-        exit();
+        return ["error" => $error_message];
     }
 
     /**
@@ -250,7 +272,7 @@ class Users extends AbstractExternalModule
                 // Remove sensitive information
                 unset($row['two_factor_auth_secret']);
                 unset($row['api_token']);
-                $results[] = $row;
+                $results = $row;
             }
         } catch (Exception $e) {
             $error_message = "Failed to get user details for: " . $username;
@@ -270,7 +292,6 @@ class Users extends AbstractExternalModule
         if (!($this->canModifyData($username))) {
             return $this->returnError($this->cannot_modify_data_error_message);
         }
-        $results = array();
         $sql=   "update redcap_user_information
                     set user_suspended_time = '" . db_real_escape_string($time) . "'
                     where username = '" . db_real_escape_string($username) . "';";
@@ -469,7 +490,6 @@ class Users extends AbstractExternalModule
         if (!($this->canModifyData($username))) {
             return $this->returnError($this->cannot_modify_data_error_message);
         }
-        $results = array();
         $sql=   "update redcap_user_information
                     set user_sponsor = '" . db_real_escape_string($sponsor)  ."'
                     where username = '" . db_real_escape_string($username) . "';";
@@ -519,17 +539,21 @@ class Users extends AbstractExternalModule
         if (!($this->canModifyData($username))) {
             return $this->returnError($this->cannot_modify_data_error_message);
         }
-        $results = array();
-        $sql=   "update redcap_user_information
-                    set user_comments = CONCAT(user_comments,'" . db_real_escape_string($comments)  ."')
-                    where username = '" . db_real_escape_string($username) . "';";
-        try {
-            $q = $this->query($sql);
-            $results = $this->success_message;
-        } catch (Exception $e) {
-            $error_message = "Failed to add comments for: " . $username;
-            REDCap::logEvent($error_message, $e->getMessage(), $sql);
-            return $this->returnError($error_message, 500);
+        $user_details = $this->getUserDetailByUsername($username);
+        if ($user_details['user_comments'] == null) {
+            $results = $this->setComments($username, $comments);
+        } else {
+            $sql=   "update redcap_user_information
+                        set user_comments = CONCAT(user_comments,'" . db_real_escape_string($comments)  ."')
+                        where username = '" . db_real_escape_string($username) . "';";
+            try {
+                $q = $this->query($sql);
+                $results = $this->success_message;
+            } catch (Exception $e) {
+                $error_message = "Failed to add comments for: " . $username;
+                REDCap::logEvent($error_message, $e->getMessage(), $sql);
+                return $this->returnError($error_message, 500);
+            }
         }
         return $results;
     }
