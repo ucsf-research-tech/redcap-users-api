@@ -8,6 +8,16 @@
 		{
 			"name": "userdetail",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -18,7 +28,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"userdetail\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"userdetail\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -26,8 +36,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -60,6 +70,16 @@
 		{
 			"name": "setsuspension",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -70,7 +90,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setsuspension\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
+					"raw": "{\n    \"request\":\"setsuspension\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,8 +98,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -112,6 +132,16 @@
 		{
 			"name": "removesuspension",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -122,7 +152,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"removesuspension\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"removesuspension\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,8 +160,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -164,6 +194,16 @@
 		{
 			"name": "suspend",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -174,7 +214,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"suspend\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"suspend\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -182,8 +222,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -216,6 +256,16 @@
 		{
 			"name": "removeexpiration",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -226,7 +276,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"removeexpiration\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"removeexpiration\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -234,8 +284,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -268,6 +318,16 @@
 		{
 			"name": "expire",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -278,7 +338,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"expire\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"expire\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -286,8 +346,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -320,6 +380,16 @@
 		{
 			"name": "deactivate",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -330,7 +400,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"expire\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"deactivate\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -338,8 +408,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -372,6 +442,16 @@
 		{
 			"name": "activate",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -382,7 +462,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"activate\",\n    \"username\": \"{{user}}\"\n}",
+					"raw": "{\n    \"request\":\"activate\",\n    \"username\": \"{{user}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -390,8 +470,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -424,6 +504,16 @@
 		{
 			"name": "setsponsor",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -434,7 +524,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setsponsor\",\n    \"username\": \"{{user}}\",\n    \"sponsor\": \"Test Sponsor\"\n}",
+					"raw": "{\n    \"request\":\"setsponsor\",\n    \"username\": \"{{user}}\",\n    \"sponsor\": \"Test Sponsor\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -442,8 +532,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -476,6 +566,16 @@
 		{
 			"name": "setinstitution",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -486,7 +586,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setinstitution\",\n    \"username\": \"{{user}}\",\n    \"institution\": \"Test Institution\"\n}",
+					"raw": "{\n    \"request\":\"setinstitution\",\n    \"username\": \"{{user}}\",\n    \"institution\": \"Test Institution\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -494,8 +594,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -528,6 +628,16 @@
 		{
 			"name": "setexpiration",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -538,7 +648,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setexpiration\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
+					"raw": "{\n    \"request\":\"setexpiration\",\n    \"username\": \"{{user}}\",\n    \"time\": \"2022-02-07 02:41:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -546,8 +656,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -580,6 +690,16 @@
 		{
 			"name": "setcomments",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -590,7 +710,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"setcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
+					"raw": "{\n    \"request\":\"setcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -598,8 +718,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
@@ -632,6 +752,16 @@
 		{
 			"name": "addcomments",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -642,7 +772,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"{{token}}\",\n    \"request\":\"addcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
+					"raw": "{\n    \"request\":\"addcomments\",\n    \"username\": \"{{user}}\",\n    \"comments\": \"Test Comments\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -650,8 +780,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "https",
+					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],

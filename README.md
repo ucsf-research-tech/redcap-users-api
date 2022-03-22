@@ -16,7 +16,7 @@ POST /api/?type=module&prefix=users_api&page=service&NOAUTH
 
 ## Authentication
 
-The Users API External Module uses a shared secret for authentication as well as an optional IP Whitelist/CIDR check.  Each request needs to contain the Users API token in its request body.  The request's token will be compared against the token configured in the external module's system settings.
+The Users API External Module uses a shared secret for authentication as well as an optional IP Whitelist/CIDR check.  Each request needs to contain the Users API token in its Authorization header.  The request's token will be compared against the token configured in the external module's system settings.
 
 <img src="images/SystemSettings.png" alt="SystemSettings" width="100%"/>
 
@@ -29,7 +29,6 @@ This request queries the redcap_user_information  table and returns all non-sens
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|userdetail|
 |username|REDCap username to use in SQL query	||
 
@@ -39,7 +38,6 @@ Checks the time in the call for a valid syntax and updates user_suspended_time t
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|setsuspension|
 |username|REDCap username to use in SQL query	||
 |time|The time that the user should be suspended.  Must be in YYYY-MM-DD hh:mm:ss format.	||
@@ -50,7 +48,6 @@ Suspends the user as of the time of the call to this method by setting user_susp
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|suspend|
 |username|REDCap username to use in SQL query	||
 
@@ -60,7 +57,6 @@ Unsuspends the user by setting user_suspended_time to null.
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|removesuspension|
 |username|REDCap username to use in SQL query	||
 
@@ -70,7 +66,6 @@ Checks the datetime in the call for a valid syntax and updates user_expiration t
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|setexpiration|
 |username|REDCap username to use in SQL query	||
 |time|The time that the user should be expired.  Must be in YYYY-MM-DD hh:mm:ss format.	||
@@ -81,7 +76,6 @@ Suspends the user as of the time of the call to this method by setting user_expi
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|expire|
 |username|REDCap username to use in SQL query	||
 
@@ -91,7 +85,6 @@ Unexpires the user by setting user_expiration to null.
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|removeexpiration|
 |username|REDCap username to use in SQL query	||
 
@@ -101,7 +94,6 @@ Performs Suspend and Expire operations at the same time.
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|deactivate|
 |username|REDCap username to use in SQL query	||
 
@@ -111,7 +103,6 @@ Performs Remove Suspension and Remove Expiration operations at the same time
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|activate|
 |username|REDCap username to use in SQL query	||
 
@@ -121,9 +112,9 @@ Validates that the call contains 255 characters or less. Updates user_inst_id to
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|setinstitution|
 |username|REDCap username to use in SQL query	||
+|institution|string||
 
 ### Set User Sponsor
 Validates that the call contains 255 characters or less. Updates user_sponsor to the text passed by the call.
@@ -131,9 +122,9 @@ Validates that the call contains 255 characters or less. Updates user_sponsor to
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|setsponsor|
 |username|REDCap username to use in SQL query	||
+|sponsor|string||
 
 ### Set User Comments
 Validates that the call contains 65,535 characters or less. Updates user_comments to the text passed by the call.
@@ -141,9 +132,9 @@ Validates that the call contains 65,535 characters or less. Updates user_comment
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|setcomments|
 |username|REDCap username to use in SQL query	||
+|comments|string||
 
 ### Add User Comments
 Validates that the call contains 65,535 characters or less. Updates user_comments to append the text passed by the call.
@@ -151,6 +142,6 @@ Validates that the call contains 65,535 characters or less. Updates user_comment
 #### Request Body Parameters
 |Parameter|Description|Required Value|
 |---------|-----------|--------------|
-|token|The shared secret used to authenticate the API request	||
 |request|Specifies the API request type	|addcomments|
 |username|REDCap username to use in SQL query	||
+|comments|string||
