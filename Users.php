@@ -34,8 +34,17 @@ class Users extends AbstractExternalModule
         // FILTER BY IP
         $this->applyIpFilter();
 
+        $this->token = null;
+        $headers = apache_request_headers();
+        if(isset($headers['Authorization'])){
+            $matches = array();
+            preg_match('/Bearer (.*)/', $headers['Authorization'], $matches);
+            if(isset($matches[1])){
+                $this->token = $matches[1];
+            }
+        }
+
         // PARSE POST PARAMETERS
-        $this->token      = empty($_POST['token'])      ? null : $_POST['token'];
         $this->request    = empty($_POST['request'])    ? null : $_POST['request'];
         $this->username      = empty($_POST['username'])      ? null : $_POST['username'];
         $this->time      = empty($_POST['time'])      ? null : $_POST['time'];
