@@ -36,8 +36,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -98,8 +98,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -160,8 +160,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -222,8 +222,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -284,8 +284,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -346,8 +346,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -408,8 +408,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -470,8 +470,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -532,8 +532,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -594,8 +594,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -656,8 +656,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -718,8 +718,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -780,8 +780,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/api/?type=module&prefix=users_api&page=service&NOAUTH",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
