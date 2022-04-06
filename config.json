@@ -17,8 +17,8 @@
             "required": true
         },
         {
-            "key": "ip_whitelist",
-            "name": "IP Whitelist",
+            "key": "ip_allowlist",
+            "name": "IP Allowlist",
             "type": "sub_settings",
             "repeatable": true,
             "sub_settings": [
