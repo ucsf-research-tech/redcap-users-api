@@ -16,7 +16,7 @@ POST /api/?type=module&prefix=users_api&page=service&NOAUTH
 
 ## Authentication
 
-The Users API External Module uses a shared secret for authentication as well as an optional IP Whitelist/CIDR check.  Each request needs to contain the Users API token in its Authorization header.  The request's token will be compared against the token configured in the external module's system settings.
+The Users API External Module uses a shared secret for authentication as well as an optional IP Allowlist/CIDR check.  Each request needs to contain the Users API token in its Authorization header.  The request's token will be compared against the token configured in the external module's system settings.
 
 <img src="images/SystemSettings.png" alt="SystemSettings" width="100%"/>
 
